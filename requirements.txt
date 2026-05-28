@@ -1,0 +1,7 @@
+greenlet==1.1.2
+mysql-connector-python==8.0.27
+protobuf==3.19.1
+pymongo==4.0
+PySimpleGUI==4.55.1
+SQLAlchemy==1.4.27
+timer==0.2.2

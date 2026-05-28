@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27077:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: HelloThere
+    volumes:
+      - '../dumps_mongo:/dumps'
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 33011:3306
+    cap_add:
+      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: Hej123
+      MYSQL_DATABASE: "Spare_partsDB"
+    volumes:
+      - '../dumps_mysql:/docker-entrypoint-initdb.d/ripandship.sql'
